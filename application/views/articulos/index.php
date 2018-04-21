@@ -2,16 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <?php 
-
 	$this->load->view('inc/cab.php'); 
-    $this->load->view('inc/menu2.php');
 ?>
 <div class="container">
 
         <div class="row">
 
             <div class="col-md-3">
-                </br>
                 <p class="lead">Categorías Destacadas</p>
                 <div class="list-group">
                 <?php
@@ -21,17 +18,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     } ?>
                 </div>
             </div>
-<div class="col-md-9">
-    <h1> Artículos destacados </h1>
-    <div class="row">
-    
-<?php
-$ruta=base_url();
-        foreach($articulos as $articulo){
-            echo("<div class=\"col-sm-4 col-lg-4 col-md-4\">");
-                echo("<div class=\"thumbnail\">");
-                    echo("<img src=\"".$ruta."\imagenes\\".$articulo->imagen."\" alt=\"".$articulo->desart."\">");
-                        echo("<div class=\"caption\">");
+            <div class="col-md-9">
+                <div class="row">
+                <?php
+                    $ruta=base_url();
+                    foreach($articulos as $articulo){
+                        echo("<div class=\"col-sm-4 col-lg-4 col-md-4\">");
+                            echo("<div class=\"thumbnail\">");
+                                echo("<img src=\"".$ruta."\imagenes\\".$articulo->imagen."\" alt=\"".$articulo->desart."\">");
+                                    echo("<div class=\"caption\">");
                             echo("<h4 class=\"pull-right\">".$articulo->precios."€</h4>");
                             echo("<h4><a href=\"".$ruta."articulos/id/".$articulo->codart."\">".$articulo->desart."</a></h4>");
                                 echo("<p>".$articulo->desampliada."</p>");
@@ -51,8 +46,10 @@ $ruta=base_url();
                     echo("</div>");
             }
             ?>
-            
-    
+
+                </div>
+
+            </div>
 
         </div>
 

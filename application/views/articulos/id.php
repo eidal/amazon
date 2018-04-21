@@ -2,11 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <?php 
-
 	$this->load->view('inc/cab.php'); 
-    $this->load->view('inc/menu2.php');
+    $this->load->view('inc/menu2.php'); 
 ?>
-<div class="container">
+<div class="container-fluid">
 
         <div class="row">
 
@@ -16,25 +15,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="list-group">
                 <?php
                     $ruta=base_url();
-                    foreach($categdestacadas as $categoria){
-                    echo("<a href=".$ruta."articulos/categoria/".$categoria->idcategoria." class=\"list-group-item\">".$categoria->nombre."</a>");
-                    } ?>
-                </div>
-            </div>
-<div class="col-md-9">
-    <h1> Artículos destacados </h1>
-    <div class="row">
-    
-<?php
+                    foreach($categdestacadas as $categorias){
+                    echo("<a href=".$ruta."articulos/categoria/".$categorias->idcategoria." class=\"list-group-item\">".$categorias->nombre."</a>");
+                    }
+                echo("</div>");
+            echo("</div>");
+
+
+echo("<div class=\"col-md-9\">");
+
+    echo("<div class=\"row\">");
+    echo("</br");
+    echo("</br");
+    echo("</br");
+
+
 $ruta=base_url();
-        foreach($articulos as $articulo){
             echo("<div class=\"col-sm-4 col-lg-4 col-md-4\">");
                 echo("<div class=\"thumbnail\">");
                     echo("<img src=\"".$ruta."\imagenes\\".$articulo->imagen."\" alt=\"".$articulo->desart."\">");
                         echo("<div class=\"caption\">");
                             echo("<h4 class=\"pull-right\">".$articulo->precios."€</h4>");
-                            echo("<h4><a href=\"".$ruta."articulos/id/".$articulo->codart."\">".$articulo->desart."</a></h4>");
-                                echo("<p>".$articulo->desampliada."</p>");
+                            echo("<h4>Referencia ".$articulo->codart."</h4>");
+                            echo("<h4>".$articulo->desart."</h4>");
+                            echo("<p>".$articulo->desampliada."</p>");
                             echo("</div>");
                             echo("<div class=\"ratings\">");
                                 echo("<p class=\"pull-right\">".$articulo->num_opinion." reviews</p>");
@@ -49,9 +53,10 @@ $ruta=base_url();
                             echo("</div>");
                         echo("</div>");
                     echo("</div>");
-            }
+             
+             
+             echo("<a href=\"".$ruta."cesta/comprar/".$articulo->codart."\" class=\"btn btn-success\" role=\"button\">Añadir al carrito</a>");
             ?>
-            
     
 
         </div>

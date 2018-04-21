@@ -2,10 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <?php 
-
-	$this->load->view('inc/cab.php'); 
-    $this->load->view('inc/menu2.php');
+	$this->load->view('inc/cab.php');
+    $this->load->view('inc/menu2.php'); 
 ?>
+
 <div class="container">
 
         <div class="row">
@@ -16,16 +16,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="list-group">
                 <?php
                     $ruta=base_url();
-                    foreach($categdestacadas as $categoria){
-                    echo("<a href=".$ruta."articulos/categoria/".$categoria->idcategoria." class=\"list-group-item\">".$categoria->nombre."</a>");
-                    } ?>
-                </div>
-            </div>
-<div class="col-md-9">
-    <h1> Artículos destacados </h1>
-    <div class="row">
+                    foreach($categdestacadas as $categorias){
+                    echo("<a href=".$ruta."articulos/categoria/".$categorias->idcategoria." class=\"list-group-item\">".$categorias->nombre."</a>");
+                    }
+                echo("</div>");
+            echo("</div>");
+
+
+echo("<div class=\"col-md-9\">");
+echo("</br>");
+    echo("<h1>".$categnombre->nombre." </h1>");
+    echo("<div class=\"row\">");
     
-<?php
+
 $ruta=base_url();
         foreach($articulos as $articulo){
             echo("<div class=\"col-sm-4 col-lg-4 col-md-4\">");

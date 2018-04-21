@@ -2,9 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <?php 
-
-	$this->load->view('inc/cab.php'); 
-    $this->load->view('inc/menu2.php');
+	$this->load->view('inc/cab.php');
+    $this->load->view('inc/menu2.php'); 
 ?>
 <div class="container">
 
@@ -22,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
 <div class="col-md-9">
-    <h1> Artículos destacados </h1>
+    <h1> Artículos en oferta </h1>
     <div class="row">
     
 <?php
@@ -32,7 +31,7 @@ $ruta=base_url();
                 echo("<div class=\"thumbnail\">");
                     echo("<img src=\"".$ruta."\imagenes\\".$articulo->imagen."\" alt=\"".$articulo->desart."\">");
                         echo("<div class=\"caption\">");
-                            echo("<h4 class=\"pull-right\">".$articulo->precios."€</h4>");
+                            echo("<h4 class=\"pull-right\">".$articulo->precOferta."€</h4>");
                             echo("<h4><a href=\"".$ruta."articulos/id/".$articulo->codart."\">".$articulo->desart."</a></h4>");
                                 echo("<p>".$articulo->desampliada."</p>");
                             echo("</div>");
